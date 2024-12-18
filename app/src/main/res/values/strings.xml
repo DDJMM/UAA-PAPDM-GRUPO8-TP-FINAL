@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Menu</string>
+    <string name="menu_entry_title">Menu</string>
+    <string name="no_menu_description">No hay comidas enlistadas, toca el + para agregar</string>
+    <string name="description">Descripción: </string>
+    <string name="back_button">Atras</string>
+    <string name="item_entry_title">Agregar item</string>
+    <string name="save_action">Guardar</string>
+    <string name="item_name_req">Nombre</string>
+    <string name="required_fields">* campos requeridos</string>
+    <string name="item_price_req">Precio</string>
+    <string name="item_detail_title">Detalles</string>
+
+
+</resources>
