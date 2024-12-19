@@ -2,7 +2,7 @@
     <string name="app_name">Menu</string>
     <string name="menu_entry_title">Menu</string>
     <string name="no_menu_description">No hay comidas enlistadas, toca el + para agregar</string>
-    <string name="description">Descripción</string>
+    <string name="description">Descripción::</string>
     <string name="back_button">Atras</string>
     <string name="item_entry_title">Agregar plato</string>
     <string name="save_action">Guardar</string>

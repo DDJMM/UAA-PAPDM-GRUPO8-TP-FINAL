@@ -43,7 +43,17 @@ class MenuEditViewModel(
 
     private fun validateInput(uiState: MenuDetails = menuUiState.menuDetails): Boolean {
         return with(uiState) {
-            name.isNotBlank() && price.isNotBlank() && description.isNotBlank()
+            val priceInput = price.trim()
+            name.isNotBlank() &&
+                    priceInput.isNotEmpty() &&
+                    priceInput.toIntOrNull() != null &&
+                    priceInput.toInt() > 0 &&
+                    description.isNotBlank()
         }
     }
+//    private fun validateInput(uiState: MenuDetails = menuUiState.menuDetails): Boolean {
+//        return with(uiState) {
+//            name.isNotBlank() && price.isNotBlank() && description.isNotBlank()
+//        }
+//    }
 }

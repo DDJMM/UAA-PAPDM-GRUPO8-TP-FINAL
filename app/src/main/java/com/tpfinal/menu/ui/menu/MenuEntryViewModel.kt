@@ -25,11 +25,23 @@ class MenuEntryViewModel(private val itemsRepository: MenusRepository) : ViewMod
         }
     }
 
+//    private fun validateInput(uiState: MenuDetails = itemUiState.menuDetails): Boolean {
+//        return with(uiState) {
+//            name.isNotBlank() && price.isNotBlank()  && description.isNotBlank() &&  price.toInt() >= 0
+//        }
+//    }
+
     private fun validateInput(uiState: MenuDetails = itemUiState.menuDetails): Boolean {
         return with(uiState) {
-            name.isNotBlank() && price.isNotBlank() && description.isNotBlank()
+            val priceInput = price.trim()
+            name.isNotBlank() &&
+                    priceInput.isNotEmpty() &&
+                    priceInput.toIntOrNull() != null &&
+                    priceInput.toInt() > 0 &&
+                    description.isNotBlank()
         }
     }
+
 }
 
 data class MenuUiState(

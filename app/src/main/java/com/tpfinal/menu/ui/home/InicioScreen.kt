@@ -191,10 +191,10 @@ fun InicioBodyPreview() {
     MenuTheme {
         InicioBody(
             listOf(
-                Menu(1, "Anvorqusa", 15.0, "Palele"),
-                Menu(2, "Anvorqusa", 15.0, "Palele"),
-                Menu(3, "Anvorqusa", 15.0, "Palele"),
-                Menu(4, "Anvorguesa", 15.0, "Palele")
+                Menu(1, "HAMBURGUESA", 15.0, "CARNE CON PAN"),
+                Menu(2, "TALLARIN", 15.0, "FIDEO CON POLLO"),
+                Menu(3, "ASADO", 15.0, "CARNE ASADA"),
+                Menu(4, "PIZZA", 15.0, "PEPERONIS")
             ), onItemClick = {},
         )
     }
@@ -205,7 +205,7 @@ fun InicioBodyPreview() {
 fun MenuItemPreview(){
     MenuTheme(darkTheme = true) {
         MenuItem(
-            Menu(1, "Anvorguersa", 100.0, "Anvorguersa a la parrilla")
+            Menu(1, "ÑOQUIS", 100.0, "PASTA CON SALSA")
         )
     }
 }
