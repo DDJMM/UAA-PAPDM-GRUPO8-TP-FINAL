@@ -11,12 +11,12 @@ import java.text.NumberFormat
 
 class MenuEntryViewModel(private val itemsRepository: MenusRepository) : ViewModel() {
 
-    var itemUiState by mutableStateOf(ItemUiState())
+    var itemUiState by mutableStateOf(MenuUiState())
         private set
 
     fun updateUiState(itemDetails: MenuDetails) {
         itemUiState =
-            ItemUiState(itemDetails = itemDetails, isEntryValid = validateInput(itemDetails))
+            MenuUiState(itemDetails = itemDetails, isEntryValid = validateInput(itemDetails))
     }
 
     suspend fun saveItem() {
@@ -32,7 +32,7 @@ class MenuEntryViewModel(private val itemsRepository: MenusRepository) : ViewMod
     }
 }
 
-data class ItemUiState(
+data class MenuUiState(
     val itemDetails: MenuDetails = MenuDetails(),
     val isEntryValid: Boolean = false
 )
@@ -55,7 +55,7 @@ fun Menu.formatedPrice(): String {
     return NumberFormat.getCurrencyInstance().format(price)
 }
 
-fun Menu.toItemUiState(isEntryValid: Boolean = false): ItemUiState = ItemUiState(
+fun Menu.toItemUiState(isEntryValid: Boolean = false): MenuUiState = MenuUiState(
     itemDetails = this.toItemDetails(),
     isEntryValid = isEntryValid
 )

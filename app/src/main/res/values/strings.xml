@@ -10,6 +10,17 @@
     <string name="required_fields">* campos requeridos</string>
     <string name="item_price_req">Precio</string>
     <string name="item_detail_title">Detalles</string>
+    <string name="item_Editar_MENU">Editar MENU</string>
+    <string name="delete">Eliminar</string>
+    <string name="menu">Menu</string>
+    <string name="attention">Atencion</string>
+    <string name="delete_question">Borrar Pregunta</string>
+    <string name="no">No</string>
+    <string name="yes">Si</string>
+    <string name="edit_title">Editar Titulo</string>
+
+
+
 
 
 </resources>

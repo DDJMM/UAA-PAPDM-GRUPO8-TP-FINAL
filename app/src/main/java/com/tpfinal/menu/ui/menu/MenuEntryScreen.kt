@@ -23,13 +23,11 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.tpfinal.menu.MenuTopAppBar
 import com.tpfinal.menu.R
 import com.tpfinal.menu.ui.AppViewModelProvider
 import com.tpfinal.menu.ui.navigation.NavigationDestination
-import com.tpfinal.menu.ui.theme.MenuTheme
 import kotlinx.coroutines.launch
 import java.util.Currency
 import java.util.Locale
@@ -57,9 +55,9 @@ fun MenuEntryScreen(
             )
         }
     ) { innerPadding ->
-        ItemEntryBody(
-            itemUiState = viewModel.itemUiState,
-            onItemValueChange = viewModel::updateUiState,
+        MenuEntryBody(
+            menuUiState = viewModel.itemUiState,
+            onMenuValueChange = viewModel::updateUiState,
             onSaveClick = {
                 coroutineScope.launch {
                     viewModel.saveItem()
@@ -79,9 +77,9 @@ fun MenuEntryScreen(
 }
 
 @Composable
-fun ItemEntryBody(
-    itemUiState: ItemUiState,
-    onItemValueChange: (MenuDetails) -> Unit,
+fun MenuEntryBody(
+    menuUiState: MenuUiState,
+    onMenuValueChange: (MenuDetails) -> Unit,
     onSaveClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -90,13 +88,13 @@ fun ItemEntryBody(
         verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_large))
     ) {
         ItemInputForm(
-            itemDetails = itemUiState.itemDetails,
-            onValueChange = onItemValueChange,
+            itemDetails = menuUiState.itemDetails,
+            onValueChange = onMenuValueChange,
             modifier = Modifier.fillMaxWidth()
         )
         Button(
             onClick = onSaveClick,
-            enabled = itemUiState.isEntryValid,
+            enabled = menuUiState.isEntryValid,
             shape = MaterialTheme.shapes.small,
             modifier = Modifier.fillMaxWidth()
         ) {
