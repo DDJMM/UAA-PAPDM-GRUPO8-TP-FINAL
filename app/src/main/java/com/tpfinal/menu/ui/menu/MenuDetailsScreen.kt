@@ -202,7 +202,7 @@ private fun MenuDetailsRow(
 ) {
     Row(modifier = modifier) {
         Text(text = stringResource(labelResID))
-        Spacer(modifier = Modifier.weight(1f))
+        Spacer(modifier = Modifier.weight(2f))
         Text(text = itemDetail, fontWeight = FontWeight.Bold)
     }
 }
@@ -231,7 +231,7 @@ private fun DeleteConfirmationDialog(
 @Preview(showBackground = true)
 @Composable
 fun ItemDetailsScreenPreview() {
-    MenuTheme {
+    MenuTheme(darkTheme = true) {
         MenuDetailsBody(MenuDetailsUiState(
             menuDetails = MenuDetails(1, "POLLO A LA NAPOLI", "$100", "POLLO CON ARROZ")
         ),  onDelete = {})
@@ -241,7 +241,7 @@ fun ItemDetailsScreenPreview() {
 @Preview(showBackground = true)
 @Composable
 fun DeleteConfirmationPreview(){
-    MenuTheme {
+    MenuTheme(darkTheme = true) {
         DeleteConfirmationDialog(
             onDeleteConfirm = {
                 var deleteConfirmationRequired = false

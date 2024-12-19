@@ -102,7 +102,7 @@ fun InicioScreen(
 private fun InicioBody(
     menuList: List<Menu>,
     onItemClick: (Int) -> Unit,
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(0.dp)
 ) {
     Column(
@@ -187,10 +187,26 @@ private fun MenuItem(
 
 @Preview(showBackground = true)
 @Composable
-fun MenuItemPreview(){
+fun InicioBodyPreview() {
     MenuTheme {
+        InicioBody(
+            listOf(
+                Menu(1, "Anvorqusa", 15.0, "Palele"),
+                Menu(2, "Anvorqusa", 15.0, "Palele"),
+                Menu(3, "Anvorqusa", 15.0, "Palele"),
+                Menu(4, "Anvorguesa", 15.0, "Palele")
+            ), onItemClick = {},
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun MenuItemPreview(){
+    MenuTheme(darkTheme = true) {
         MenuItem(
             Menu(1, "Anvorguersa", 100.0, "Anvorguersa a la parrilla")
         )
     }
 }
+
