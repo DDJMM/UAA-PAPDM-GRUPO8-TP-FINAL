@@ -10,7 +10,11 @@ import androidx.navigation.navArgument
 import com.tpfinal.menu.ui.home.HomeDestination
 import com.tpfinal.menu.ui.home.InicioScreen
 import com.tpfinal.menu.ui.menu.MenuDetailsDestination
+import com.tpfinal.menu.ui.menu.MenuDetailsScreen
+import com.tpfinal.menu.ui.menu.MenuEditDestination
+import com.tpfinal.menu.ui.menu.MenuEditScreen
 import com.tpfinal.menu.ui.menu.MenuEntryDestination
+import com.tpfinal.menu.ui.menu.MenuEntryScreen
 
 @Composable
 fun MenuNavHost(
@@ -44,7 +48,7 @@ fun MenuNavHost(
             })
         ) {
             MenuDetailsScreen(
-                navigateToEditItem = { navController.navigate("${ItemEditDestination.route}/$it") },
+                navigateToEditItem = { navController.navigate("${MenuEditDestination.route}/$it") },
                 navigateBack = { navController.navigateUp() }
             )
         }

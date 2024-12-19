@@ -15,12 +15,15 @@ object AppViewModelProvider {
     val Factory = viewModelFactory{
 
         initializer {
-            MenuEntryViewModel(menuApplication().container.menusRepository)
+            MenuEntryViewModel(
+                menuApplication().container.menusRepository
+            )
         }
 
-        // Initializer for HomeViewModel
         initializer {
-            InicioViewModel(menuApplication().container.menusRepository)
+            InicioViewModel(
+                menuApplication().container.menusRepository
+            )
         }
         initializer {
             MenuDetailsViewModel(

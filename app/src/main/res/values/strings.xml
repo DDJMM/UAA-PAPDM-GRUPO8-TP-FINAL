@@ -2,7 +2,7 @@
     <string name="app_name">Menu</string>
     <string name="menu_entry_title">Menu</string>
     <string name="no_menu_description">No hay comidas enlistadas, toca el + para agregar</string>
-    <string name="description">Descripción: </string>
+    <string name="description">Descripción</string>
     <string name="back_button">Atras</string>
     <string name="item_entry_title">Agregar item</string>
     <string name="save_action">Guardar</string>
@@ -12,9 +12,9 @@
     <string name="item_detail_title">Detalles</string>
     <string name="item_Editar_MENU">Editar MENU</string>
     <string name="delete">Eliminar</string>
-    <string name="menu">Menu</string>
+    <string name="menu">Nombre</string>
     <string name="attention">Atencion</string>
-    <string name="delete_question">Borrar Pregunta</string>
+    <string name="delete_question">Borrar plato</string>
     <string name="no">No</string>
     <string name="yes">Si</string>
     <string name="edit_title">Editar Titulo</string>

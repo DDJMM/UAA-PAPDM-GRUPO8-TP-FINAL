@@ -6,7 +6,6 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tpfinal.menu.data.Menu
 import kotlinx.coroutines.launch
 import com.tpfinal.menu.data.MenusRepository
 import kotlinx.coroutines.flow.filterNotNull
@@ -37,12 +36,12 @@ class MenuEditViewModel(
         }
     }
 
-    fun updateUiState(itemDetails: MenuDetails) {
+    fun updateUiState(menuDetails: MenuDetails) {
         menuUiState =
             MenuUiState(menuDetails = menuDetails, isEntryValid = validateInput(menuDetails))
     }
 
-    private fun validateInput(uiState: MenuDetails = menuUiState.itemDetails): Boolean {
+    private fun validateInput(uiState: MenuDetails = menuUiState.menuDetails): Boolean {
         return with(uiState) {
             name.isNotBlank() && price.isNotBlank() && description.isNotBlank()
         }

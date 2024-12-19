@@ -172,10 +172,25 @@ private fun MenuItem(
                     style = MaterialTheme.typography.titleMedium
                 )
             }
+            Spacer(Modifier.weight(1f))
             Text(
-                text = stringResource(R.string.description, menu.description),
+                text = stringResource(R.string.description),
                 style = MaterialTheme.typography.titleMedium
             )
+            Text(
+                text = menu.description,
+                style = MaterialTheme.typography.titleSmall
+            )
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun MenuItemPreview(){
+    MenuTheme {
+        MenuItem(
+            Menu(1, "Anvorguersa", 100.0, "Anvorguersa a la parrilla")
+        )
     }
 }

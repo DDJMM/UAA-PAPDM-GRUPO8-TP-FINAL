@@ -213,7 +213,9 @@ private fun DeleteConfirmationDialog(
 ) {
     AlertDialog(onDismissRequest = { /* Do nothing */ },
         title = { Text(stringResource(R.string.attention)) },
-        text = { Text(stringResource(R.string.delete_question)) },
+        text = { Text(stringResource(R.string.delete_question),
+                style = MaterialTheme.typography.titleMedium,)
+               },
         modifier = modifier,
         dismissButton = {
             TextButton(onClick = onDeleteCancel) {
@@ -234,4 +236,23 @@ fun ItemDetailsScreenPreview() {
             menuDetails = MenuDetails(1, "POLLO A LA NAPOLI", "$100", "POLLO CON ARROZ")
         ),  onDelete = {})
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DeleteConfirmationPreview(){
+    MenuTheme {
+        DeleteConfirmationDialog(
+            onDeleteConfirm = {
+                var deleteConfirmationRequired = false
+                onDelete()
+            },
+            onDeleteCancel = { var deleteConfirmationRequired = false },
+            modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_medium))
+        )
+    }
+}
+
+fun onDelete() {
+    TODO("Not yet implemented")
 }

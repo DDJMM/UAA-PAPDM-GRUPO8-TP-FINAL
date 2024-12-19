@@ -16,16 +16,16 @@ class MenuEntryViewModel(private val itemsRepository: MenusRepository) : ViewMod
 
     fun updateUiState(itemDetails: MenuDetails) {
         itemUiState =
-            MenuUiState(itemDetails = itemDetails, isEntryValid = validateInput(itemDetails))
+            MenuUiState(menuDetails = itemDetails, isEntryValid = validateInput(itemDetails))
     }
 
     suspend fun saveItem() {
         if (validateInput()) {
-            itemsRepository.insertItem(itemUiState.itemDetails.toItem())
+            itemsRepository.insertItem(itemUiState.menuDetails.toItem())
         }
     }
 
-    private fun validateInput(uiState: MenuDetails = itemUiState.itemDetails): Boolean {
+    private fun validateInput(uiState: MenuDetails = itemUiState.menuDetails): Boolean {
         return with(uiState) {
             name.isNotBlank() && price.isNotBlank() && description.isNotBlank()
         }
@@ -33,7 +33,7 @@ class MenuEntryViewModel(private val itemsRepository: MenusRepository) : ViewMod
 }
 
 data class MenuUiState(
-    val itemDetails: MenuDetails = MenuDetails(),
+    val menuDetails: MenuDetails = MenuDetails(),
     val isEntryValid: Boolean = false
 )
 
@@ -56,7 +56,7 @@ fun Menu.formatedPrice(): String {
 }
 
 fun Menu.toItemUiState(isEntryValid: Boolean = false): MenuUiState = MenuUiState(
-    itemDetails = this.toItemDetails(),
+    menuDetails = this.toItemDetails(),
     isEntryValid = isEntryValid
 )
 

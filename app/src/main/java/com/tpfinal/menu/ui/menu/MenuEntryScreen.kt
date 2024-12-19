@@ -88,7 +88,7 @@ fun MenuEntryBody(
         verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_large))
     ) {
         ItemInputForm(
-            itemDetails = menuUiState.itemDetails,
+            itemDetails = menuUiState.menuDetails,
             onValueChange = onMenuValueChange,
             modifier = Modifier.fillMaxWidth()
         )
