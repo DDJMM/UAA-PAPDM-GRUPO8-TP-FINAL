@@ -40,6 +40,7 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.tpfinal.menu.MenuTopAppBar
@@ -201,7 +202,7 @@ private fun MenuDetailsRow(
     @StringRes labelResID: Int, itemDetail: String, modifier: Modifier = Modifier
 ) {
     Row(modifier = modifier) {
-        Text(text = stringResource(labelResID))
+        Text(text = stringResource(labelResID),  textAlign = TextAlign.Right,)
         Spacer(modifier = Modifier.weight(2f))
         Text(text = itemDetail, fontWeight = FontWeight.Bold)
     }
@@ -231,9 +232,9 @@ private fun DeleteConfirmationDialog(
 @Preview(showBackground = true)
 @Composable
 fun ItemDetailsScreenPreview() {
-    MenuTheme(darkTheme = true) {
+    MenuTheme(darkTheme = false) {
         MenuDetailsBody(MenuDetailsUiState(
-            menuDetails = MenuDetails(1, "POLLO A LA NAPOLI", "$100", "POLLO CON ARROZ")
+            menuDetails = MenuDetails(1, "POLLO A LA NAPOLI", "$100", "Mix de rúcula, tomates cherry asado, cebolla morada, roquefort, almendra tostada, vinagreta de balsámico y focaccia")
         ),  onDelete = {})
     }
 }
@@ -241,7 +242,7 @@ fun ItemDetailsScreenPreview() {
 @Preview(showBackground = true)
 @Composable
 fun DeleteConfirmationPreview(){
-    MenuTheme(darkTheme = true) {
+    MenuTheme(darkTheme = false) {
         DeleteConfirmationDialog(
             onDeleteConfirm = {
                 var deleteConfirmationRequired = false
